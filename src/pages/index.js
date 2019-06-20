@@ -1,21 +1,54 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const IndexPage = props => {
+  const authors = props.data.allAuthorsJson.edges.map(({ node }) => node)
+
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <ul>
+        {authors.map(author => (
+          <li key={author.path}>
+            <a href={author.path}>{author.display}</a>
+
+            <ul>
+              {author.stories.map(story => (
+                <li key={story.path}>
+                  <a href={story.path}>
+                    {story.display}
+                    <span>{story.wordcount}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </Layout>
+  )
+}
 
 export default IndexPage
+
+export const query = graphql`
+  query {
+    allAuthorsJson {
+      edges {
+        node {
+          display
+          path
+          stories {
+            display
+            path
+            wordcount
+          }
+        }
+      }
+    }
+  }
+`

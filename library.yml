@@ -1,0 +1,56 @@
+# file location will be marktwain/frog.txt
+authors:
+  - key: marktwain
+    display: Mark Twain
+    path: /mark-twain
+    stories:
+      - key: frog
+        display: The Celebrated Jumping Frog Of Calaveras County
+        path: /the-celebrated-jumping-frog-of-calaveras-county
+        year: 1867
+        genre: Fiction
+        source: http://twain.lib.virginia.edu/projects/price/frog.htm
+
+  - key: edgarallanpoe
+    display: Edgar Allan Poe
+    path: /edgar-allan-poe
+    stories:
+      - key: telltaleheart
+        display: The Tell Tale Heart
+        path: /the-tell-tale-heart
+        genre: Horror
+        year: 1843
+        source: https://www.poemuseum.org/the-tell-tale-heart
+
+      - key: purloinedletter
+        display: The Purloined Letter
+        path: /the-purloined-letter
+        year: 1844
+        source: http://xroads.virginia.edu/~HYPER/POE/purloine.html
+
+      - key: oblongbox
+        display: The Oblong Box
+        path: /the-oblong-box
+        year: 1844
+        source: http://xroads.virginia.edu/~HYPER/POE/oblong_b.html
+
+  - key: philipkdick
+    display: Philip K. Dick
+    path: philip-k-dick
+    stories:
+      - key: dullearth
+        display: Upon Dull Earth
+        path: /upon-dull-earth
+        genre: Science Fiction
+        year: 1953
+        source: http://www.philipkdickfans.com/mirror/gutenberg/Upon_The_Dull_Earth/pkd110-0.html
+
+  - key: kenliu
+    display: Ken Liu
+    path: /ken-liu
+    stories:
+      - key: papermenagerie
+        display: Paper Menagerie
+        path: /paper-menagerie
+        year: 2011
+        source: https://io9.gizmodo.com/read-ken-lius-amazing-story-that-swept-the-hugo-nebula-5958919
