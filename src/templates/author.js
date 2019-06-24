@@ -3,6 +3,8 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import ReadableTime from "../components/readabletime"
 
+import "../stylesheets/templates/author.scss"
+
 function AuthorTemplate(props) {
   const { display, path, stories } = props.data.authorsJson
 
@@ -10,17 +12,19 @@ function AuthorTemplate(props) {
 
   return (
     <Layout>
-      <h1>
-        <a href={path}>{display}</a>
-      </h1>
-      <ul>
-        {stories.map(story => (
-          <li key={story.key}>
-            <a href={`${path}${story.path}`}>{story.display}</a>
-            <ReadableTime timeInMin={story.readtime} />
-          </li>
-        ))}
-      </ul>
+      <div className="author__container">
+        <h1>
+          <a href={path}>{display}</a>
+        </h1>
+        <ul>
+          {stories.map(story => (
+            <li key={story.key}>
+              <a href={`${path}${story.path}`}>{story.display}</a>
+              <ReadableTime timeInMin={story.readtime} />
+            </li>
+          ))}
+        </ul>
+      </div>
     </Layout>
   )
 }

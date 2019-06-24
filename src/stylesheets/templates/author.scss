@@ -1,0 +1,11 @@
+$alias: "author__";
+
+.#{$alias}container {
+  // background-color: blue;
+  ul {
+    li {
+      display: inline;
+      margin-right: 1em;
+    }
+  }
+}

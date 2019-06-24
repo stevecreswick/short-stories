@@ -3,6 +3,8 @@ import Layout from "../components/layout"
 import ReadableTime from "../components/readabletime"
 import { graphql } from "gatsby"
 
+import "../stylesheets/templates/story.scss"
+
 function StoryTemplate(props) {
   const { pageContext, data } = props
   const { allAuthorsJson } = data
@@ -15,26 +17,28 @@ function StoryTemplate(props) {
 
   return (
     <Layout>
-      <h1>{display}</h1>
-      <div>
-        <ul>
-          <li>
-            <a href={author.path}>
-              <span>{author.display}</span>
-            </a>
-          </li>
-          <li>
-            <span>{year}</span>
-          </li>
-          <li>
-            <ReadableTime timeInMin={readtime} />
-          </li>
-        </ul>
+      <div className="story__container">
+        <h1>{display}</h1>
+        <div>
+          <ul>
+            <li>
+              <a href={author.path}>
+                <span>{author.display}</span>
+              </a>
+            </li>
+            <li>
+              <span>{year}</span>
+            </li>
+            <li>
+              <ReadableTime timeInMin={readtime} />
+            </li>
+          </ul>
+        </div>
+        {paragraphs.map((paragraph, i) => {
+          return <p key={`paragraph-${i}`}>{paragraph}</p>
+        })}
+        <div>{source}</div>
       </div>
-      {paragraphs.map((paragraph, i) => {
-        return <p key={`paragraph-${i}`}>{paragraph}</p>
-      })}
-      <div>{source}</div>
     </Layout>
   )
 }

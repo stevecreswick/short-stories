@@ -1,0 +1,35 @@
+$alias: "story__";
+
+.#{$alias}container {
+  // background-color: blue;
+  ul {
+    margin: 2em 0;
+
+    li {
+      display: inline;
+      padding-right: 1em;
+      padding-left: 1em;
+      position: relative;
+
+      // &:last-of-type {
+      //   background-color: green;
+      // }
+
+      &:after {
+        content: " / ";
+        position: absolute;
+        right: 0;
+      }
+
+      &:first-of-type {
+        padding-left: 0;
+      }
+
+      &:last-of-type {
+        &:after {
+          content: "";
+        }
+      }
+    }
+  }
+}

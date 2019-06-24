@@ -43,7 +43,9 @@ const calculateParagraphs = text => {
     }
   })
 
-  return paragraphs
+  const excerpt = text.substring(0, 500)
+
+  return { paragraphs, excerpt }
 }
 
 // author/story will be the yaml keys
@@ -51,11 +53,11 @@ const calculateParagraphs = text => {
 const formatStory = (authorKey, storyKey) => {
   const text = fs.readFileSync(`library/${authorKey}/${storyKey}.txt`, "utf8")
 
-  const paragraphs = calculateParagraphs(text)
+  const { paragraphs, excerpt } = calculateParagraphs(text)
   const wordcount = calculateWordCount(paragraphs)
   const readtime = calculateReadTime(wordcount)
 
-  return { wordcount, readtime, paragraphs }
+  return { wordcount, readtime, paragraphs, excerpt }
 }
 const addStoryText = authors => {
   return authors.map(author => {
@@ -63,7 +65,7 @@ const addStoryText = authors => {
 
     const stories = author.stories.map(story => {
       const { key: storyKey, display, year, path, source } = story
-      const { wordcount, readtime, paragraphs } = formatStory(
+      const { wordcount, readtime, paragraphs, excerpt } = formatStory(
         authorKey,
         storyKey
       )
@@ -77,6 +79,7 @@ const addStoryText = authors => {
         readtime,
         source,
         paragraphs,
+        excerpt,
       }
     })
 

@@ -1,10 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Short Story Reader`,
+    title: `Salute Your Shorts`,
     description: `Public domain short stories for the modern web.`,
     author: `@stevecreswick`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
