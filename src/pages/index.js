@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import ReadableTime from "../components/readabletime"
 
 const IndexPage = props => {
   const authors = props.data.allAuthorsJson.edges.map(({ node }) => node)
@@ -18,11 +19,9 @@ const IndexPage = props => {
 
             <ul>
               {author.stories.map(story => (
-                <li key={story.path}>
-                  <a href={story.path}>
-                    {story.display}
-                    <span>{story.wordcount}</span>
-                  </a>
+                <li key={story.key}>
+                  <a href={`${author.path}${story.path}`}>{story.display}</a>
+                  <ReadableTime timeInMin={story.readtime} />
                 </li>
               ))}
             </ul>
@@ -43,9 +42,10 @@ export const query = graphql`
           display
           path
           stories {
+            key
             display
             path
-            wordcount
+            readtime
           }
         }
       }

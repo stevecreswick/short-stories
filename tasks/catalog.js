@@ -62,23 +62,26 @@ const addStoryText = authors => {
     const { key: authorKey, display, path } = author
 
     const stories = author.stories.map(story => {
-      const { key: storyKey, display, year, path } = story
+      const { key: storyKey, display, year, path, source } = story
       const { wordcount, readtime, paragraphs } = formatStory(
         authorKey,
         storyKey
       )
 
       return {
+        key: storyKey,
         display,
         path,
         year,
         wordcount,
         readtime,
+        source,
         paragraphs,
       }
     })
 
     return {
+      key: authorKey,
       display,
       path,
       stories,

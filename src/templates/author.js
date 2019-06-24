@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
+import ReadableTime from "../components/readabletime"
 
 function AuthorTemplate(props) {
   const { display, path, stories } = props.data.authorsJson
@@ -14,11 +15,9 @@ function AuthorTemplate(props) {
       </h1>
       <ul>
         {stories.map(story => (
-          <li key={story.path}>
-            <a href={story.path}>
-              {story.display}
-              <span>{story.wordcount}</span>
-            </a>
+          <li key={story.key}>
+            <a href={`${path}${story.path}`}>{story.display}</a>
+            <ReadableTime timeInMin={story.readtime} />
           </li>
         ))}
       </ul>
@@ -33,8 +32,10 @@ export const query = graphql`
       display
       path
       stories {
+        key
         display
         path
+        readtime
         wordcount
       }
     }

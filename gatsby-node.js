@@ -34,9 +34,11 @@ exports.createPages = ({ actions, graphql }) => {
           allAuthorsJson {
             edges {
               node {
+                key
                 display
                 path
                 stories {
+                  key
                   display
                   path
                   wordcount
@@ -52,6 +54,7 @@ exports.createPages = ({ actions, graphql }) => {
         }
         const blogTemplate = path.resolve("./src/templates/blog-post.js")
         const AuthorTemplate = path.resolve("./src/templates/author.js")
+        const StoryTemplate = path.resolve("./src/templates/story.js")
 
         result.data.allAuthorsJson.edges.forEach(({ node: author }, i) => {
           createPage({
@@ -64,10 +67,10 @@ exports.createPages = ({ actions, graphql }) => {
 
           author.stories.forEach(story => {
             createPage({
-              path: story.path,
-              component: blogTemplate,
+              path: `${author.path}${story.path}`,
+              component: StoryTemplate,
               context: {
-                slug: story.path,
+                storyKey: story.key,
               }, // additional data can be passed via context
             })
           })
