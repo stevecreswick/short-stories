@@ -1,0 +1,15 @@
+.excerpt {
+  position: relative;
+  z-index: -2;
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(transparent 75%, white);
+  }
+}

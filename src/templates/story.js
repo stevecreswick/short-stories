@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import ReadableTime from "../components/readabletime"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import "../stylesheets/templates/story.scss"
 
@@ -19,21 +19,20 @@ function StoryTemplate(props) {
     <Layout>
       <div className="story__container">
         <h1>{display}</h1>
-        <div>
-          <ul>
-            <li>
-              <a href={author.path}>
-                <span>{author.display}</span>
-              </a>
-            </li>
-            <li>
-              <span>{year}</span>
-            </li>
-            <li>
-              <ReadableTime timeInMin={readtime} />
-            </li>
-          </ul>
-        </div>
+        <ul class="story__details">
+          <li>
+            <Link to={author.path}>
+              <span>{author.display}</span>
+            </Link>
+          </li>
+          <li>
+            <span>{year}</span>
+          </li>
+          <li>
+            <ReadableTime timeInMin={readtime} />
+          </li>
+        </ul>
+
         {paragraphs.map((paragraph, i) => {
           return <p key={`paragraph-${i}`}>{paragraph}</p>
         })}

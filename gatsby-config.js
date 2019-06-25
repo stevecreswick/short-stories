@@ -1,8 +1,26 @@
+const yaml = require("js-yaml")
+const fs = require("fs")
+const path = require("path")
+
+const library = yaml.safeLoad(fs.readFileSync("library.yml", "utf8"))
+const authorLinks = library.authors.map(author => {
+  const { path, display } = author
+
+  return { path, display }
+})
+
 module.exports = {
   siteMetadata: {
     title: `Salute Your Shorts`,
     description: `Public domain short stories for the modern web.`,
     author: `@stevecreswick`,
+    menuLinks: [
+      {
+        display: "Authors",
+        path: "/authors",
+        subLinks: authorLinks,
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-sass`,

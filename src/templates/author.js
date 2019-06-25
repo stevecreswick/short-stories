@@ -2,25 +2,26 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import ReadableTime from "../components/readabletime"
+import Excerpt from "../components/excerpt"
+import { Link } from "gatsby"
 
 import "../stylesheets/templates/author.scss"
 
 function AuthorTemplate(props) {
-  const { display, path, stories } = props.data.authorsJson
+  console.log(props)
 
-  console.log("Stories ", stories)
+  const { display, path, stories } = props.data.authorsJson
 
   return (
     <Layout>
       <div className="author__container">
-        <h1>
-          <a href={path}>{display}</a>
-        </h1>
+        <h1>{display}</h1>
         <ul>
           {stories.map(story => (
             <li key={story.key}>
-              <a href={`${path}${story.path}`}>{story.display}</a>
+              <Link to={`${path}${story.path}`}>{story.display}</Link>
               <ReadableTime timeInMin={story.readtime} />
+              <Excerpt text={story.excerpt} link={`${path}${story.path}`} />
             </li>
           ))}
         </ul>
@@ -41,6 +42,7 @@ export const query = graphql`
         path
         readtime
         wordcount
+        excerpt
       }
     }
   }

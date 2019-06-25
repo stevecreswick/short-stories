@@ -1,0 +1,55 @@
+$alias: "header__";
+$height: 60;
+
+header {
+  height: #{$height}px;
+  padding: 3em 0;
+  background-color: antiquewhite;
+
+  .#{$alias}container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    height: 100%;
+    max-width: 960px;
+    background-color: white;
+
+    .#{$alias}header {
+      display: inline-block;
+    }
+
+    .#{$alias}menu {
+      padding-right: 2em;
+
+      .#{$alias}menu-item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+      }
+
+      .#{$alias}sub-menu {
+        position: absolute;
+        padding: 1em;
+        top: #{$height - 4}px;
+        right: 0;
+        background-color: white;
+
+        display: none;
+
+        .#{$alias}sub-menu-item {
+          font-size: 16px;
+          display: block;
+        }
+      }
+
+      &:hover {
+        .#{$alias}sub-menu {
+          display: block;
+        }
+      }
+    }
+  }
+}

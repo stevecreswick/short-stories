@@ -59,6 +59,7 @@ const formatStory = (authorKey, storyKey) => {
 
   return { wordcount, readtime, paragraphs, excerpt }
 }
+
 const addStoryText = authors => {
   return authors.map(author => {
     const { key: authorKey, display, path } = author

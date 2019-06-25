@@ -5,7 +5,7 @@ import "./footer.scss"
 
 const Footer = ({ siteTitle }) => (
   <footer>
-    <div class="footer__container">
+    <div className="footer__container">
       <h3>
         <Link to="/">{siteTitle}</Link>
       </h3>

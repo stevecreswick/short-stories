@@ -54,3 +54,13 @@ authors:
         path: /paper-menagerie
         year: 2011
         source: https://io9.gizmodo.com/read-ken-lius-amazing-story-that-swept-the-hugo-nebula-5958919
+
+  - key: ohenry
+    display: O. Henry
+    path: /o-henry
+    stories:
+      - key: giftofthemagi
+        display: The Gift of the Magi
+        path: /the-gift-of-the-magi
+        year: 1905
+        source: https://americanenglish.state.gov/files/ae/resource_files/1-the_gift_of_the_magi_0.pdf

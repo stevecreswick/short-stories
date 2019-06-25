@@ -2,9 +2,12 @@ $alias: "story__";
 
 .#{$alias}container {
   // background-color: blue;
-  ul {
-    margin: 2em 0;
 
+  .#{$alias}details {
+    margin: 2em 0;
+  }
+
+  ul {
     li {
       display: inline;
       padding-right: 1em;

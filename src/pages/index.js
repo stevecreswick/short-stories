@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import ReadableTime from "../components/readabletime"
+import Excerpt from "../components/excerpt"
 
 import "../stylesheets/pages/index.scss"
 
@@ -18,14 +19,19 @@ const IndexPage = props => {
         <ul>
           {authors.map(author => (
             <li key={author.path}>
-              <a href={author.path}>{author.display}</a>
+              <Link to={author.path}>{author.display}</Link>
 
               <ul>
                 {author.stories.map(story => (
                   <li key={story.key}>
-                    <a href={`${author.path}${story.path}`}>{story.display}</a>
+                    <Link to={`${author.path}${story.path}`}>
+                      {story.display}
+                    </Link>
                     <ReadableTime timeInMin={story.readtime} />
-                    <p className="excerpt">{`${story.excerpt}...`}</p>
+                    <Excerpt
+                      text={story.excerpt}
+                      link={`${author.path}${story.path}`}
+                    />
                   </li>
                 ))}
               </ul>
