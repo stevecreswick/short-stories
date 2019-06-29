@@ -1,0 +1,149 @@
+# file location will be marktwain/frog.txt
+authors:
+  - key: marktwain
+    display: Mark Twain
+    path: /mark-twain
+    stories:
+      - key: frog
+        display: The Celebrated Jumping Frog Of Calaveras County
+        path: /the-celebrated-jumping-frog-of-calaveras-county
+        year: 1867
+        genre: Fiction
+        source: http://twain.lib.virginia.edu/projects/price/frog.htm
+
+  - key: edgarallanpoe
+    display: Edgar Allan Poe
+    path: /edgar-allan-poe
+    stories:
+      - key: telltaleheart
+        display: The Tell Tale Heart
+        path: /the-tell-tale-heart
+        genre: Horror
+        year: 1843
+        source: https://www.poemuseum.org/the-tell-tale-heart
+
+      - key: purloinedletter
+        display: The Purloined Letter
+        path: /the-purloined-letter
+        year: 1844
+        source: http://xroads.virginia.edu/~HYPER/POE/purloine.html
+
+      - key: oblongbox
+        display: The Oblong Box
+        path: /the-oblong-box
+        year: 1844
+        source: http://xroads.virginia.edu/~HYPER/POE/oblong_b.html
+
+  - key: philipkdick
+    display: Philip K. Dick
+    path: philip-k-dick
+    stories:
+      - key: adjustmentteam
+        display: Adjustment Team
+        path: /adjustment-team
+        genre: Science Fiction
+        year: 1954
+
+      - key: beyondliesthewub
+        display: Beyond Lies the Wub
+        path: /beyond-lies-the-wub
+        genre: Science Fiction
+        year: 1952
+
+      - key: dullearth
+        display: Upon Dull Earth
+        path: /upon-dull-earth
+        genre: Science Fiction
+        year: 1953
+
+      - key: mrspaceship
+        display: Mr. Spaceship
+        path: /mr-spaceship
+        genre: Science Fiction
+        year: 1953
+
+      - key: ofwitheredapples
+        display: Of Withered Apples
+        path: /of-withered-apples
+        genre: Science Fiction
+        year: 1954
+
+      - key: piperinthewoods
+        display: Piper in the Woods
+        path: /piper-in-the-woods
+        genre: Science Fiction
+        year: 1953
+
+      - key: secondvariety
+        display: Second Variety
+        path: /second-variety
+        genre: Science Fiction
+        year: 1953
+
+      - key: thecrystalcrypt
+        display: The Crystal Crypt
+        path: /second-variety
+        genre: Science Fiction
+        year: 1953
+
+      - key: thedefenders
+        display: The Defenders
+        path: /the-defenders
+        genre: Science Fiction
+        year: 1953
+
+      - key: theeyeshaveit
+        display: The Eyes Have It
+        path: /the-eyes-have-it
+        genre: Science Fiction
+        year: 1953
+
+      - key: thegoldenman
+        display: The Golden Man
+        path: /the-golden-man
+        genre: Science Fiction
+        year: 1954
+
+      - key: thehangingstranger
+        display: The Hanging Stranger
+        path: /the-hanging-stranger
+        genre: Science Fiction
+        year: 1953
+
+      - key: theskull
+        display: The Skull
+        path: /the-skull
+        genre: Science Fiction
+        year: 1952
+
+      - key: thevariableman
+        display: The Variable Man
+        path: /the-variable-man
+        genre: Science Fiction
+        year: 1953
+
+      - key: tonyandthebeetles
+        display: Tony and the Beetles
+        path: /tony-and-the-beetles
+        genre: Science Fiction
+        year: 1953
+
+  - key: kenliu
+    display: Ken Liu
+    path: /ken-liu
+    stories:
+      - key: papermenagerie
+        display: Paper Menagerie
+        path: /paper-menagerie
+        year: 2011
+        source: https://io9.gizmodo.com/read-ken-lius-amazing-story-that-swept-the-hugo-nebula-5958919
+
+  - key: ohenry
+    display: O. Henry
+    path: /o-henry
+    stories:
+      - key: giftofthemagi
+        display: The Gift of the Magi
+        path: /the-gift-of-the-magi
+        year: 1905
+        source: https://americanenglish.state.gov/files/ae/resource_files/1-the_gift_of_the_magi_0.pdf

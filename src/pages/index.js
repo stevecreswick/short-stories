@@ -19,19 +19,24 @@ const IndexPage = props => {
         <ul>
           {authors.map(author => (
             <li key={author.path}>
-              <Link to={author.path}>{author.display}</Link>
+              <h3>
+                <Link to={author.path}>{author.display}</Link>
+              </h3>
 
               <ul>
                 {author.stories.map(story => (
                   <li key={story.key}>
-                    <Link to={`${author.path}${story.path}`}>
-                      {story.display}
-                    </Link>
-                    <ReadableTime timeInMin={story.readtime} />
+                    <h4>
+                      <Link to={`${author.path}${story.path}`}>
+                        {story.display}
+                      </Link>
+                    </h4>
+
                     <Excerpt
                       text={story.excerpt}
                       link={`${author.path}${story.path}`}
                     />
+                    <ReadableTime timeInMin={story.readtime} />
                   </li>
                 ))}
               </ul>

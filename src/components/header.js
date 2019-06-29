@@ -18,7 +18,8 @@ const Header = ({ siteTitle, menuLinks }) => {
             const { display, path, subLinks = [] } = menuLink
             return (
               <li key={path} className={`${alias}menu-item`}>
-                <a href={path}>{display}</a>
+                <Link to={path}>{display}</Link>
+
                 <ul className={`${alias}sub-menu`}>
                   {subLinks.map(subLink => {
                     const { path, display } = subLink

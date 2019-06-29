@@ -19,7 +19,7 @@ function StoryTemplate(props) {
     <Layout>
       <div className="story__container">
         <h1>{display}</h1>
-        <ul class="story__details">
+        <ul className="story__details">
           <li>
             <Link to={author.path}>
               <span>{author.display}</span>
@@ -34,7 +34,12 @@ function StoryTemplate(props) {
         </ul>
 
         {paragraphs.map((paragraph, i) => {
-          return <p key={`paragraph-${i}`}>{paragraph}</p>
+          return (
+            <p
+              dangerouslySetInnerHTML={{ __html: paragraph }}
+              key={`paragraph-${i}`}
+            />
+          )
         })}
         <div>{source}</div>
       </div>

@@ -6,7 +6,7 @@ const ReadableTime = ({ timeInMin }) => {
   const minutes = Math.floor(time / 60)
   const seconds = Math.round(time - minutes * 60)
 
-  return timeInMin ? <span>{`${minutes}m ${seconds}s`}</span> : ""
+  return timeInMin ? <span>{`Read Time: ${minutes}m ${seconds}s`}</span> : ""
 }
 
 ReadableTime.propTypes = {

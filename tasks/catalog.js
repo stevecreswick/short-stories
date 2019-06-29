@@ -43,6 +43,8 @@ const calculateParagraphs = text => {
     }
   })
 
+  // @todo: change to splitting sentences and meeting at least 500 characters
+  // This way the preview will always end with a complete sentence.
   const excerpt = text.substring(0, 500)
 
   return { paragraphs, excerpt }
@@ -108,7 +110,7 @@ const writeJSON = async authors => {
 }
 
 try {
-  const library = yaml.safeLoad(fs.readFileSync("library.yml", "utf8"))
+  const library = yaml.safeLoad(fs.readFileSync("library/library.yml", "utf8"))
 
   // The YAML does not contain the full story text
   const authors = addStoryText(library.authors)

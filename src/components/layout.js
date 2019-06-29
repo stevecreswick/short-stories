@@ -22,6 +22,7 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             title
+            storyCount
             menuLinks {
               display
               path
@@ -35,9 +36,11 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <div class="layout">
+      <div className="layout">
         <Header
-          siteTitle={data.site.siteMetadata.title}
+          siteTitle={`${data.site.siteMetadata.title} - ${
+            data.site.siteMetadata.storyCount
+          } Stories`}
           menuLinks={data.site.siteMetadata.menuLinks}
         />
         <div className="layout__container">

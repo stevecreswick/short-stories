@@ -26,9 +26,14 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "axios": "^0.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "dotenv": "^8.0.0",
     "gatsby-plugin-excerpts": "^1.0.2",
     "js-yaml": "^3.13.1",
-    "prettier": "^1.17.1"
+    "prettier": "^1.17.1",
+    "striptags": "^3.1.1",
+    "unescape": "^1.0.1"
   },
   "keywords": [
     "gatsby"

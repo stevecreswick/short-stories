@@ -1,11 +1,13 @@
 const yaml = require("js-yaml")
 const fs = require("fs")
-const path = require("path")
+// const path = require("path")
 
-const library = yaml.safeLoad(fs.readFileSync("library.yml", "utf8"))
+const library = yaml.safeLoad(fs.readFileSync("library/library.yml", "utf8"))
+
+let storyCount = 0
 const authorLinks = library.authors.map(author => {
-  const { path, display } = author
-
+  const { path, display, stories } = author
+  storyCount += stories.length
   return { path, display }
 })
 
@@ -21,6 +23,7 @@ module.exports = {
         subLinks: authorLinks,
       },
     ],
+    storyCount,
   },
   plugins: [
     `gatsby-plugin-sass`,
